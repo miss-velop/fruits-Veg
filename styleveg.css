@@ -4,11 +4,15 @@
 		background-image: url("fruitsVeg.jpg") no-repeat fixed;
 	
 		width:100%;
+		font-size:1.5rem;
+		margin:0 auto;
+		letter-spacing:0.5px;
 		
 			
    
 
 	}
+
 	#container
 	{
 		padding: 10px;
