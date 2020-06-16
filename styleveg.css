@@ -1,7 +1,10 @@
 
 
 	body{
-		background-image: url("fruitsVeg.jpg") no-repeat fixed;
+		background-image: url("fruitsVeg.jpg");
+		background-repeat: no-repeat;
+		background-position: fixed;
+		background-size: cover;
 	
 		width:100%;
 		font-size:1.5rem;
