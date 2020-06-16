@@ -18,7 +18,7 @@
 .header{
 	text-align:center;
 	font-weight:300;
-	background-color:yellow;
+	background-color:transparent;
 	display:block;
 	height:15%;
 }
@@ -36,7 +36,7 @@
 	{
 		#container
 		{
-			opacity:0.9;
+			opacity:1.5;
 		}
         
        body{
