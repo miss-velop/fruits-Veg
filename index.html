@@ -1,0 +1,107 @@
+<html>
+<head>
+	<link rel="stylesheet" href="styleveg.css">
+<script type="text/javascript">
+	var opt;
+	function fillList(n)
+	{
+		var veg=new Array("Carrots","Sweet Potato","Peas", "Butternut", "Cucumber");
+		
+		var vegPrice= new Array(10,6,15,12,7);
+		
+		var fruit= new Array("Apples", "Strawberry", "Kiwi", "Pears", "Grapes","Oranges");
+		var fruitPrice=new Array(8,30,10,8,40,48);
+		
+		var names,prices;
+		if(n==0)
+		{
+			names=veg;
+			prices=vegPrice;
+		}
+		else{
+			names=fruit;
+			prices=fruitPrice;
+		        }			
+		 
+		 var opt;       
+		for(var i=0;i<names.length; i++)
+		{
+			opt=new Option(names[i],prices[i],false,false);
+			document.f1.items.options[i]=opt;
+		}
+			
+		
+	}
+	
+	 function addItem()
+	 {
+	 	var s= document.f1.items.selectedIndex;
+	 	var pos,t,v;
+	 	
+	 	if(s!=-1)
+		{	t=document.f1.items.options[s].text;
+			v=document.f1.items.options[s].value;
+			opt=new Option(t,v,false,false);
+			pos=document.f1.cart.length;
+			document.f1.cart.options[pos]=opt;
+		}
+		
+	 }
+	 function deleteAll()
+	 {
+		document.f1.cart.options.length=0; 
+	 }
+	 
+	 function calcCost()
+	 {
+	 	var cost=0;
+	 	for(var i=0;i<document.f1.cart.length; i++)
+	 	{
+	 		cost+= parseInt(document.f1.cart.options[i].value);
+	 	}
+		
+		 document.getElementById('totalcost').innerHTML = "R" + cost.toFixed(2);
+	 
+	 }
+	</script>
+	
+	
+</head>
+<body >
+<form name="f1" id="container">
+	<h3> Fruit and veg shop </h3>
+	<h4>Whatever you choose is in a bottle</h4>
+	Veg <input type="radio" name = "product" onclick="fillList(0)">
+	Fruit <input type="radio" name = "product" onclick="fillList(1)"> <br>
+	
+	<br>
+	Choose an item from a list
+	<select name="items" >
+		<options value="none"> none </options>
+	</select>
+
+	<br><br>
+	<input type="button"  value="Add to cart >>" onclick="addItem()" /> 
+	<br> <br>	<hr>
+
+	My shopping cart 
+
+	<select name="cart" >
+		<options value="none"> none </options>
+	</select>
+	<br><br>
+	<input type="button"  value="delete all >>" onclick="deleteAll()" /> 
+	<br> <br>	<hr>
+	<br><br>
+	<input type="button"  value="How much" onclick="calcCost()" />
+	<div>
+        <label> 
+         Total:
+        </label><span id="totalcost"></span>
+    </div>
+
+ </form> 
+</body> 
+</html>
+
+
