@@ -1,14 +1,6 @@
 
 
-	body{
-		background-image: url("fruitsVeg.jpg") no-repeat fixed;
 	
-		position: fixed;
-			top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-
-	}
 	#container
 	{
 		padding: 10px;
